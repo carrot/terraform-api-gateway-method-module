@@ -51,15 +51,6 @@ variable "integration_request_template" {
 }
 
 #
-# Velocity template used to capture params from request and send to lambda (optional)
-# more info: http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
-#
-
-variable "integration_request_template" {
-  default = "#set($inputRoot = $input.path('$')){}"
-}
-
-#
 # Velocity template used to capture params sent to response from lambda (optional)
 # more info: http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
 #

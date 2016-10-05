@@ -1,8 +1,11 @@
+# Terraform API Gateway Method Module
+
 Terraform module for creating a serverless architecture in API Gateway. This module can be used to resource methods attached to your API Gateway resources to call lambda functions with a few variables exposed see [variables.tf](https://github.com/carrot//terraform-api-gateway-method-module/blob/master/variables.tf).
 
 ## Caveats
 
 This module makes a few assumptions for simplicity:
+
 1. You are resourcing API gateway to be used to access Lambda functions as part of a serverless API.
 2. Your requests/responses are all in JSON
 3. You only require one error response template across your entire API Gateway instance.
@@ -35,3 +38,6 @@ module "UsersPost" {
   authorization = "AWS_IAM"
 }
 ```
+
+Need CORS enabled? check out [https://github.com/carrot/terraform-api-gateway-cors-module](https://github.com/carrot/terraform-api-gateway-cors-module)
+
