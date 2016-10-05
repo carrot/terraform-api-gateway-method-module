@@ -22,7 +22,7 @@ resource "aws_api_gateway_resource" "users" {
 # This one creates a user.
 
 module "UsersPost" {
-  source  = "../modules/apig_method"
+  source  = "github.com/carrot/terraform-api-gateway-method-module"
   rest_api_id = "${aws_api_gateway_rest_api.<API_NAME>.id}"
   resource_id = "${aws_api_gateway_resource.users.id}"
   http_method = "POST"
