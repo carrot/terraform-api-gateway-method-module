@@ -33,7 +33,9 @@ module "UsersPost" {
   account_id = "1234567890"
   region = "us-east-1"
   integration_request_template = "#set($inputRoot = $input.path('$')){}"
+  request_model = "Empty"
   integration_response_template = "#set($inputRoot = $input.path('$')){}"
+  response_model = "Empty"
   integration_error_template = "#set ($errorMessageObj = $util.parseJson($input.path('$.errorMessage')) {\"message\" :\"$errorMessageObj.message\"}"
   authorization = "AWS_IAM"
 }
