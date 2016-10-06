@@ -41,3 +41,6 @@ module "UsersPost" {
 
 Need CORS enabled? check out [https://github.com/carrot/terraform-api-gateway-cors-module](https://github.com/carrot/terraform-api-gateway-cors-module)
 
+## More info
+[Terraform - API Gateway](https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html)
+
