@@ -3,6 +3,7 @@ resource "aws_api_gateway_method" "ResourceMethod" {
   resource_id = "${var.resource_id}"
   http_method = "${var.http_method}"
   authorization = "${var.authorization}"
+  request_parameters = "${var.request_parameters}"
   request_models = { "application/json" = "${var.request_model}" }
 }
 
@@ -21,8 +22,8 @@ resource "aws_api_gateway_integration_response" "ResourceMethodIntegration200" {
   resource_id = "${var.resource_id}"
   http_method = "${aws_api_gateway_method.ResourceMethod.http_method}"
   status_code = "${aws_api_gateway_method_response.ResourceMethod200.status_code}"
-  response_parameters = { 
-    "method.response.header.Access-Control-Allow-Origin" = "'*'" 
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = "'*'"
   }
   response_templates = { "application/json" = "${var.integration_response_template}" }
 }
@@ -36,8 +37,8 @@ resource "aws_api_gateway_integration_response" "ResourceMethodIntegration400" {
   response_templates = {
     "application/json" = "${var.integration_error_template}"
   }
-  response_parameters = { 
-    "method.response.header.Access-Control-Allow-Origin" = "'*'" 
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = "'*'"
   }
 }
 
