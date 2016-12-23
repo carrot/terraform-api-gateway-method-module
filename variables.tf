@@ -1,16 +1,16 @@
-# 
+#
 # API Gateway ID (required)
 # e.g., ${var.aws_api_gateway_rest_api.<API>.id}
 #
 
-variable "rest_api_id" {} 
+variable "rest_api_id" {}
 
 #
 # Resource ID (required)
 # e.g., ${var.aws_api_gateway_resource.<RESOURCE>.id}
 #
 
-variable "resource_id" {} 
+variable "resource_id" {}
 
 #
 # HTTP Method ID (required)
@@ -57,6 +57,15 @@ variable "integration_request_template" {
 
 variable "integration_response_template" {
   default = "#set($inputRoot = $input.path('$')){}"
+}
+
+#
+# Request Parameters
+# A map of request query string parameters and headers that should be passed to the integration.
+#
+
+variable "request_parameters" {
+  default = {}
 }
 
 #
