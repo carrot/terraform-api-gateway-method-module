@@ -33,13 +33,10 @@ resource "aws_api_gateway_integration_response" "ResourceMethodIntegration400" {
   resource_id = "${var.resource_id}"
   http_method = "${aws_api_gateway_method.ResourceMethod.http_method}"
   status_code = "${aws_api_gateway_method_response.ResourceMethod400.status_code}"
-  selection_pattern = ".*message.*"
   response_templates = {
     "application/json" = "${var.integration_error_template}"
   }
-  response_parameters = {
-    "method.response.header.Access-Control-Allow-Origin" = "'*'"
-  }
+  response_parameters = { "method.response.header.Access-Control-Allow-Origin" = "'*'" }
 }
 
 resource "aws_api_gateway_method_response" "ResourceMethod200" {
